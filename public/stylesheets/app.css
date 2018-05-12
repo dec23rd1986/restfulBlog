@@ -1,0 +1,23 @@
+body{
+background: #34e89e;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+#dog_header{
+color: #f7fffc;
+}
+
+i.icon{
+    font-size: 2em;
+}
+
+.container.main {
+    margin-top: 7.0em;
+}
+
+#delete{
+    display: inline;
+}
