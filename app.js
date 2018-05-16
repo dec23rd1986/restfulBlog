@@ -6,8 +6,8 @@ var bodyParser          = require("body-parser"),
     app                 = express();
 
 // APP CONFIG
-// mongoose.connect("mongodb://localhost/restful_blog_app");
-mongoose.connect("mongodb://andrea:Texas123.@ds123124.mlab.com:23124/dog_blog");
+mongoose.connect("mongodb://localhost/restful_blog_app");
+// mongoose.connect("mongodb://andrea:Texas123.@ds123124.mlab.com:23124/dog_blog");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,7 +17,8 @@ app.use(methodOverride("_method"));
 // MONGOOSE / MODEL CONFIG
 var blogSchema = new mongoose.Schema({
     title: String,
-    image: String,
+    image: String, 
+    // image: {type: String, default: "img01.jpg"},
     body: String,
     created: { type: Date, default: Date.now }
 });
