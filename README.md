@@ -1,0 +1,1 @@
+This is a blog application that focuses on RESTful routing using Node.js, Express, Mongoos and Semantic Ui. 
