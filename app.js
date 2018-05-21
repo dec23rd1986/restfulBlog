@@ -18,7 +18,6 @@ app.use(methodOverride("_method"));
 var blogSchema = new mongoose.Schema({
     title: String,
     image: String, 
-    // image: {type: String, default: "img01.jpg"},
     body: String,
     created: { type: Date, default: Date.now }
 });
@@ -53,16 +52,18 @@ app.get("/blogs/new", function(req, res) {
 
 app.post("/blogs", function(req, res){
     //create blog
-    req.body.blog.body = req.sanitize(req.body.blog.body)
+    console.log(req.body);
+    console.log("===========")
+    console.log(req.body);
     Blog.create(req.body.blog, function(err, newBlog){
         if(err){
             res.render("new");
         } else {
-    //if fine, redirect to the index
+            //then, redirect to the index
             res.redirect("/blogs");
         }
-    })
-})
+    });
+});
 
 // SHOW ROUTE
 
