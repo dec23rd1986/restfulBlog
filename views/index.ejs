@@ -1,7 +1,7 @@
 <% include ./partials/header %>
 
 <div class="ui main text container">
-    <div class="ui huge header" id="dog_header">The Best Dog Breed Because!</div>
+    <div class="ui huge header" id="dog_header">RESTful Blog App</div>
     <div class="ui top  attached segment">
         <div class="ui divided items">
             <% blogs.forEach(function(blog){ %>
@@ -15,12 +15,14 @@
                              <span><%= blog.created.toDateString() %></span>
                          </div>
                          <div class="description">
-                             <p><%- blog.body.substring(0, 100) %>...</p>
+                            <% if(blog.body && blog.body.length > 0) { %>
+                            <p><%= blog.body.substring(0, 100)%></p>
+                            <% } %>
                          </div>
                          <div class="extra">
-                             <a class="ui floated teal button" href="/blogs/<%= blog._id %>">
+                             <a class="ui floated basic violet button" href="/blogs/<%= blog._id %>">
                                  Read More
-                                 
+                                 <i class="right chevron icon"></i>
                              </a>
                          </div>
                     </div>
